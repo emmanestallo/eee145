@@ -18,6 +18,7 @@ for n = 1:3
     ylabel('Gap Length (mm)')
     xlabel('Time (s)')
     hold on
+    legend('i=0.2', 'i=0.5', 'i=0.8')
 
 
 
