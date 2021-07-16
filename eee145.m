@@ -19,10 +19,9 @@ for n = 1:3
     xlabel('Time (s)')
     hold on
     legend('i=0.2', 'i=0.5', 'i=0.8')
-
-
-
 end
+
+
 %%
 %question number 1
 function y_prime = calc_ode(t,y,M,D,K,a)
