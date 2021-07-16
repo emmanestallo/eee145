@@ -34,6 +34,6 @@ function y_prime = calc_ode(t,y,M,D,K,a)
     x_0 = [0.02 0];
     y_prime = zeros(2,1);
     y_prime(1) = y(2);
-    y_prime(2) = ((-mu*w*h*((N*a)^2))/((y(1)+dist)^2))/M + K*0.02/M ... 
+    y_prime(2) = ((-mu*w*h*((N*a)^2))/((y(1)+dist)^2))/M + K*x_0(1)/M ... 
         -(D/M)*y(2) - (K/M)*y(1);  
 end
