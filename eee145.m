@@ -16,7 +16,7 @@ mu = 1.25664e-6;
 i = [0.2 0.5 0.8];
 t1 = 0:0.01:1;
 x_0 = [0.02 0];
-figure;
+figure('NumberTitle', 'off', 'Name', 'Question 2');
 for n = 1:3 
     [t,y] = ode45(@(t,y) calc_ode(t,y,M,D,K,i(n)), t1, x_0);
     plot(t,y(:,1)*1000)
@@ -32,7 +32,7 @@ end
 i = [0.2 0.5 0.8];
 t1 = 0:0.01:1;
 x_0 = [0.02 0];
-figure;
+figure('NumberTitle', 'off', 'Name', 'Question 3');
 for n = 1:3 
     [t,y] = ode45(@(t,y) calc_ode(t,y,M,D,K,i(n)*(1-exp(-30*t))), t1, x_0);
     plot(t,y(:,1)*1000)
