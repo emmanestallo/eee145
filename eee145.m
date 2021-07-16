@@ -1,9 +1,13 @@
+%Authors:
+%Mark Lester Cuaresma
+%Han Espinosa
+%Andrei Mikhail Serra
+%Emmanuel Jesus Estallo
+
 M = 0.02;
 D = 0.5;
 K = 4.5;
 mu = 1.25664e-6;
-
-
 
 
 
@@ -12,11 +16,29 @@ mu = 1.25664e-6;
 i = [0.2 0.5 0.8];
 t1 = 0:0.01:1;
 x_0 = [0.02 0];
+figure;
 for n = 1:3 
     [t,y] = ode45(@(t,y) calc_ode(t,y,M,D,K,i(n)), t1, x_0);
     plot(t,y(:,1)*1000)
     ylabel('Gap Length (mm)')
     xlabel('Time (s)')
+    title('Armature Position')
+    hold on
+    legend('i=0.2', 'i=0.5', 'i=0.8')
+end
+
+%%
+%question number 3
+i = [0.2 0.5 0.8];
+t1 = 0:0.01:1;
+x_0 = [0.02 0];
+figure;
+for n = 1:3 
+    [t,y] = ode45(@(t,y) calc_ode(t,y,M,D,K,i(n)*(1-exp(-30*t))), t1, x_0);
+    plot(t,y(:,1)*1000)
+    ylabel('Gap Length (mm)')
+    xlabel('Time (s)')
+    title('Armature Position with an Exponential Current Decay')
     hold on
     legend('i=0.2', 'i=0.5', 'i=0.8')
 end
