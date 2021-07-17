@@ -23,6 +23,7 @@ for n = 1:3
     xlabel('Time (s)')
     title('Armature Position')
     hold on
+    grid on
     legend('i=0.2', 'i=0.5', 'i=0.8')
 end
 
@@ -37,8 +38,9 @@ for n = 1:3
     plot(t,y(:,1)*1000)
     ylabel('Gap Length (mm)')
     xlabel('Time (s)')
-    title('Armature Position with an Exponential Current Decay')
+    title('Armature Position with a Current Multiplier')
     hold on
+    grid on
     legend('i=0.2', 'i=0.5', 'i=0.8')
 end
 
@@ -58,9 +60,11 @@ figure('NumberTitle', 'off', 'Name', 'Question 4');
 for n = 1:3 
     [t,y] = ode45(@(t,y) calc_ode(t,y,M,D,K,i(n)), t1, x_0);
     plot(t, ( (const*i(n)) ./ ((y(:,1) + dist*ones(101,1)).^(2)) ) .* y(:,2))
-    ylabel('Voltage across the coil')
+    ylabel('Voltage (V)')
     xlabel('Time (s)')
+    title('Voltage Across the Coil')
     hold on
+    grid on
     legend('i=0.2', 'i=0.5', 'i=0.8')
 end
 
