@@ -1,7 +1,7 @@
 %Authors:
 %Mark Lester Cuaresma
 %Han Espinosa
-%Andrei Mikhail Serra
+%Andre Mikhail Serra
 %Emmanuel Jesus Estallo
 
 M = 0.02;
