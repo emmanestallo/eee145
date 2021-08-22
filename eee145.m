@@ -83,7 +83,8 @@ const = ones(101,1)*(-2*mu*w*h*N*N);
 figure('NumberTitle', 'off', 'Name', 'Question 4 Part 2');
 for n = 1:3 
     [t,y] = ode45(@(t,y) calc_ode(t,y,M,D,K,i(n)*(1-exp(-30*t))), t1, x_0);
-    plot(t, ( (const*i(n)) ./ ((y(:,1) + dist*ones(101,1)).^(2)) ) .* y(:,2))
+    emf = 2*mu*w*h*N^2*(diff(i(n)*(1-exp(-30*t))./(y+0.004))./diff(t));
+    plot(t(2:end),emf(:,1))
     ylabel('Voltage (V)')
     xlabel('Time (s)')
     title('Voltage Across the Coil with Current Multiplier')
