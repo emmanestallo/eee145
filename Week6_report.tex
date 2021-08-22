@@ -1,0 +1,60 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage[american]{circuitikz}
+\usepackage{float}
+
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\begin{document}
+
+\title{EEE145 Simulation: Small Motors}
+
+\author{\IEEEauthorblockN{Emmanuel Jesus R. Estallo}
+\IEEEauthorblockA{\textit{University of the Philippines Diliman} \\
+\textit{Electrical and Electronics Engineering Institute}\\
+Quezon City, Philippines\\
+emmanuel.estallo@eee.upd.edu.ph}}
+
+\maketitle
+
+
+\section{Introduction}
+\noindent 
+Small motors are used for low power applications. Depending on certain conditions, a small motor can 
+be operated by both AC and DC sources. The main problem when dealing with AC sources is that we want the
+current and flux to change simultaneously to produce torque. In this report, we will compare two 
+single-phase motor implementations: capacitor-start and capacitor-start, capacitor-run, using simulink. 
+
+\vspace{8pt}
+\section{Simulation: How heavy can you lift?}
+\noindent 
+The rated torque input, $T_{m}$ is obtained by
+\begin{equation*}
+T_m = \frac{P_{out}}{\omega}
+\end{equation*}
+\noindent 
+From the given parameters, $P_{out} = 186.5W$. Since the motor has $4$ poles, 
+\begin{align*}
+\omega_S &= \frac{120f}{p} = 1800 \\
+\omega &= \omega_S (1-0.05) = 1710 \cdot \frac{2\pi}{60} = 179.0708 \; rad/s \\ 
+T_m &= \frac{186.5}{179.0708} \\ 
+&= 1.0415
+\end{align*}
+\noindent 
+The rated torque input, $T_m$ is equal to \framebox{$1.0415$ N-m}.
+
+
+
+
+
+
+
+
+\end{document}
